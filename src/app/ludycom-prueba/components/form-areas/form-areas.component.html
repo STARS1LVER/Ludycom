@@ -1,0 +1,41 @@
+<form class="form" [formGroup]="dataArea"  (ngSubmit)="onSubmit()" >
+  <p class="title"> <span class="text-degrade">Registra un Area</span> </p>
+
+
+      <label>
+        <input formControlName="codigo"  placeholder="" type="number" class="input">
+        <span>codigo</span>
+      </label>
+
+
+    <label>
+      <input formControlName="nombre"  placeholder="" type="text" class="input">
+      <span>Nombre del Area</span>
+    </label>
+
+    <label>
+      <select *ngIf="empleadosData" formControlName="lider" id="estado" name="estado" class="styled-select"  >
+        <option value="">Lider</option>
+        <option *ngFor="let opcion of empleadosData | async " [value]="opcion.nombres"> {{ opcion.nombres }} </option>
+      </select>
+    </label>
+
+        <label>
+          <select formControlName="estado" id="estado" name="estado" class="styled-select"  >
+            <option value="activo" selected>Activo</option>
+            <option value="inactivo" >Inactivo</option>
+          </select>
+        </label>
+
+
+  <span *ngIf="isInvalid"  class="warning" >
+    Todos los campos deben estar llenos
+  </span>
+
+
+  <button *ngIf="!id"  type="submit" class="submit">Registrar Area</button>
+
+  <button *ngIf="id" type="submit" class="submit">Actualizar <i class="fa-solid fa-upload" style="color: #ffffff;"></i> </button>
+  <button *ngIf="id" (click)="deleteAreaById(id)" class="submit subt-2">Borrar <i class="fa-solid fa-trash" style="color: #ffffff;"></i> </button>
+
+</form>

@@ -1,0 +1,53 @@
+<form class="form" [formGroup]="dataForm" (ngSubmit)="onSubmit()" *ngIf="dataForm">
+  <p class="title"> <span class="text-degrade">Registra un Empleado </span> </p>
+    <div class="flex">
+      <label>
+          <input formControlName="nombres"  placeholder="" type="text" class="input">
+          <span>Nombres</span>
+      </label>
+
+      <label>
+          <input formControlName="apellidos"  placeholder="" type="text" class="input">
+          <span>Apellidos</span>
+      </label>
+    </div>
+
+
+    <label>
+      <span>Fecha de nacimiento</span>
+      <input formControlName="fecha_nacimiento" placeholder="" type="date" class="input">
+  </label>
+
+  <label>
+      <input formControlName="email"  placeholder="" type="text" class="input">
+      <span>Email</span>
+  </label>
+
+  <label>
+      <input formControlName="numero_documento" placeholder="" type="text" class="input">
+      <span>Numero de Documento</span>
+  </label>
+  <label>
+      <input formControlName="salario" placeholder="" type="text" class="input">
+      <span>Salario</span>
+  </label>
+
+  <label>
+    <select formControlName="estado" id="estado" name="estado" class="styled-select"  >
+      <option value="activo" selected>Activo</option>
+      <option value="inactivo" >Inactivo</option>
+    </select>
+  </label>
+
+
+  <span *ngIf="isInvalid"  class="warning" >
+    Todos los campos deben estar llenos
+  </span>
+
+
+  <button *ngIf="!id" type="submit" class="submit">Registrar</button>
+
+  <button *ngIf="id" type="submit" class="submit">Actualizar <i class="fa-solid fa-upload" style="color: #ffffff;"></i> </button>
+  <button *ngIf="id" (click)="deleteEmpleadoById(id)" class="submit subt-2">Borrar <i class="fa-solid fa-trash" style="color: #ffffff;"></i> </button>
+
+</form>

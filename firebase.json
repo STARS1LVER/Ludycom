@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "ludycomPrueba",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<header>
+  <div class="content-img">
+    <img src="https://ludycom.com/Logo%20-%20Blanco.png" alt="">
+  </div>
+  <div id="menu-button" class="dash" (click)="toggleMenu()"> <span class="text-degrade">Dashboard</span> <i class="fa-solid fa-bars" style="color: #ffffff;"></i> </div>
+</header>
+<div id="sidebar" [ngStyle]="{'width': isMenuOpen ? '250px' : '0'}">
+  <ul>
+    <li><a href="#">Tablas <i class="fa-solid fa-table" style="color: #ffffff;"></i> </a>
+      <ul *ngIf="isMenuOpen" >
+          <li><button routerLink="/ludycom/table-empleados" >Tabla Empleado  </button></li>
+          <li><button routerLink="/ludycom/table-areas" >Tabla Areas</button></li>
+      </ul>
+  </li>
+  <li><a href="#">Registros <i class="fa-solid fa-registered" style="color: #ffffff;"></i></a>
+    <ul *ngIf="isMenuOpen" >
+        <li><button routerLink="/ludycom/register-empleado" >Registrar Empleado</button></li>
+        <li><button routerLink="/ludycom/register-areas" >Registrar Area</button></li>
+    </ul>
+</li>
+<li><a href="#">Datos <i class="fa-solid fa-database" style="color: #ffffff;"></i> </a>
+  <ul *ngIf="isMenuOpen" >
+      <li><button >Cantidad Total de usuarios: {{totalEmpleados}}  </button></li>
+      <li><button  >Cantidad Total de Areas: {{totalArea}} </button></li>
+  </ul>
+</li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>

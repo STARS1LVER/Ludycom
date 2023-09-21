@@ -1,0 +1,35 @@
+
+<main class="contenedor-p">
+  <div class="responsive-table">
+    <button class="btn-a" routerLink="/ludycom/register-empleado">Agregar <i class="fa-solid fa-address-book" style="color: #252525;"></i></button>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Email</th>
+          <th>Número de Documento</th>
+          <th>Salario</th>
+          <th>Estado</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empleado of empleadosData | async ">
+          <td data-label="Nombres" >{{ empleado.nombres }}</td>
+          <td data-label="Apellidos" >{{ empleado.apellidos }}</td>
+          <td data-label="Nacimiento" >{{ empleado.fecha_nacimiento }}</td>
+          <td data-label="Email">{{ empleado.email }}</td>
+          <td data-label="Documento">{{ empleado.numero_documento }}</td>
+          <td data-label="Salario">{{ empleado.salario }}</td>
+          <td data-label="Estado">{{ empleado.estado }}</td>
+          <td data-label="Opciones"> <button [routerLink]="['/ludycom/edit-empleados',empleado.id]"  >edit <i class="fa-solid fa-pen-to-square" style="color: #141414;"></i> </button> <button (click)="deleteEmpleadoById(empleado.id)" >eliminar <i class="fa-solid fa-trash" style="color: #303030;"></i> </button>  </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+

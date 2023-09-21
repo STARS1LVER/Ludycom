@@ -1,0 +1,27 @@
+
+<main class="contenedor-p">
+  <div class="responsive-table">
+    <button class="btn-a" routerLink="/ludycom/register-areas">Agregar <i class="fa-solid fa-address-book" style="color: #1e1e1e;"></i> </button>
+    <table>
+      <thead>
+        <tr>
+          <th>Codigo</th>
+          <th>Nombre</th>
+          <th>Lider</th>
+          <th>Estado</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let area of areasData | async ">
+          <td data-label="Codigo" >{{ area.codigo }}</td>
+          <td data-label="Nombre">{{ area.nombre }}</td>
+          <td data-label="Lider">{{ area.lider }}</td>
+          <td data-label="Estado">{{ area.estado }}</td>
+          <td> <button [routerLink]="['/ludycom/edit-areas',area.id]"  >edit <i class="fa-solid fa-pen-to-square" style="color: #141414;"></i> </button> <button (click)="deleteAreaById(area.id)" >eliminar <i class="fa-solid fa-trash" style="color: #303030;"></i> </button>  </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>

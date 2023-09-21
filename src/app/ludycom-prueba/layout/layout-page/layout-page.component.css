@@ -1,0 +1,98 @@
+header {
+  /* background-color: #e5e5e5; */
+  background-color: rgb(47, 47, 47);
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+
+.text-degrade{
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.dash{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-img{
+  width: 198px;
+  height: 40px;
+}
+
+.content-img img {
+  width: 100%;
+}
+
+#menu-button {
+
+  cursor: pointer;
+
+}
+
+#sidebar {
+  position: absolute;
+  z-index: 9998;
+  position: fixed;
+  width: 0;
+  height: 100%;
+  /* background-color: #e5e5e5;; */
+  background-color: rgb(47, 47, 47);
+  color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+/* Agrega estilos para el submenú */
+.submenu-open ul {
+  display: block; /* Muestra el submenú cuando la clase submenu-open está presente */
+}
+
+#sidebar ul ul {
+  list-style-type: none;
+  padding-left: 20px;
+
+}
+
+#sidebar ul ul li {
+  padding: 10px;
+}
+
+#sidebar ul ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+
+a{
+  margin-left: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+
+button{
+  cursor: pointer;
+  border: 2px solid #0044FF;
+  padding: 5px;
+  width: 100px;
+  background-color: #ffffff;
+  font-family: 'Poppins';
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0px 2px 0px rgba(0 , 0, 0, 0.2);
+}
+
+button:hover{
+  background-color: #e5e5e5;
+}

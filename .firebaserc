@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ludycom-prueba": {
+      "hosting": {
+        "ludycomPrueba": [
+          "ludycom-angular"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ludycom-prueba"
+  }
+}
